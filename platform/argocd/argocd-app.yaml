@@ -1,0 +1,20 @@
+apiVersion: argoproj.io/v1alpha1
+kind: application
+metadata:
+  name: argocd
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/OcsenasBence/k8s-observability-platform.git
+    targetRevision: HEAD
+    path: platform/argocd
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: argocd
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
