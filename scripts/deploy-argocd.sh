@@ -7,5 +7,5 @@ helm upgrade --install argocd platform/argocd \
     --wait
 
 kubectl apply -f platform/argocd/argocd-app.yaml -n argocd
-
+#argo jelszó
 kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.password}" | base64 -d; echo
