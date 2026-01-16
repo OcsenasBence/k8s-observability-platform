@@ -1,0 +1,9 @@
+minio:
+  mode: Standalone
+  rootUser: admin
+  rootPassword: admin
+
+  buckets:
+    - name: mimir-data
+      policy: none
+      purge: false

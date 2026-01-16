@@ -1,0 +1,14 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: minio
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/OcsenasBence/k8s-observability-platform
+    targetRevision: HEAD
+    path: platform/minio
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: minio-store

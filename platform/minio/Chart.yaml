@@ -1,0 +1,11 @@
+apiVersion: v2
+name: minio-config
+description: Minio S3 storage for Mimir
+type: application
+version: 1.0.0
+appVersion: "1.0.0"
+
+dependencies:
+  - name: minio
+    version: 5.0.0
+    repository: https://charts.min.io/
