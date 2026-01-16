@@ -7,3 +7,10 @@ minio:
     - name: mimir-data
       policy: none
       purge: false
+  resources:
+    requests:
+      memory: 256Mi
+      cpu: 100m
+  persistence:
+    enabled: true
+    size: 5Gi
